@@ -1,5 +1,5 @@
-import './index.css';
+import './index.css'
 
-const msg = 'hello world';
-console.log(msg);
-document.body.innerHTML = msg;
+const msg = 'hello world'
+// console.log(msg);
+document.body.innerHTML = msg
