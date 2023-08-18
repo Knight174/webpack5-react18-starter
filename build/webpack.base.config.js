@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const commonConfig = {
-  entry: './src/main.ts',
+  entry: './src/main.tsx',
   output: {
     filename: 'js/[name].[contenthash:6].js',
     assetModuleFilename: 'assets/[name]_[hash][ext]',
