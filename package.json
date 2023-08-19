@@ -10,6 +10,7 @@
     "typescript",
     "start template"
   ],
+  "type": "module",
   "scripts": {
     "dev": "webpack server --mode=development --progress",
     "build": "webpack --mode=production --progress",
@@ -17,12 +18,16 @@
   },
   "devDependencies": {
     "@swc/core": "^1.3.78",
+    "@swc/register": "^0.1.10",
     "@types/node": "^20.5.0",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "@types/webpack": "^5.28.1",
+    "@types/webpack-bundle-analyzer": "^4.6.0",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
     "css-loader": "^6.8.1",
     "eslint": "^8.47.0",
-    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-webpack-plugin": "^4.0.1",
@@ -40,5 +45,9 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",
     "webpack-merge": "^5.9.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

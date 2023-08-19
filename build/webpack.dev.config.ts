@@ -1,7 +1,9 @@
-const path = require('path')
-const ESLintPlugin = require('eslint-webpack-plugin')
+import { join } from 'path'
+import ESLintPlugin from 'eslint-webpack-plugin'
+import dirname from './names'
+import { WebpackOptionsNormalized } from 'webpack'
 
-const devConfig = {
+const devConfig: Partial<WebpackOptionsNormalized> = {
   mode: 'development',
   cache: {
     type: 'filesystem'
@@ -11,7 +13,7 @@ const devConfig = {
   },
   devtool: 'eval-cheap-module-source-map',
   devServer: {
-    static: path.join(__dirname, 'dist'),
+    static: join(dirname, 'dist'),
     open: true,
     compress: true,
     port: 8080,
@@ -35,4 +37,4 @@ const devConfig = {
   ]
 }
 
-module.exports = devConfig
+export default devConfig

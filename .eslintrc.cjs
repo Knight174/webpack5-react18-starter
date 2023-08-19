@@ -9,12 +9,14 @@ module.exports = {
     jasmine: true
   },
   parser: '@typescript-eslint/parser',
+  ignorePatterns: ['**/node_modules/*'],
   extends: [
-    'airbnb-base',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'prettier'
+    'plugin:prettier/recommended'
   ],
-  plugins: ['@typescript-eslint', 'prettier'],
-  rules: {}
+  plugins: [],
+  rules: {
+    // 'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
+  }
 }

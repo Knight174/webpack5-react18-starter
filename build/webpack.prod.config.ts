@@ -1,18 +1,15 @@
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import { WebpackOptionsNormalized, Configuration } from 'webpack'
 
-const prodConfig = {
+const prodConfig: Partial<WebpackOptionsNormalized> | Configuration = {
   mode: 'production',
   devtool: 'nosources-source-map',
   plugins: [
     new BundleAnalyzerPlugin({
       analyzerMode: 'disabled',
-      generateStatsFile: true,
-    }),
+      generateStatsFile: true
+    })
   ],
-  performance: {
-    maxEntrypointSize: 10000000,
-    maxAssetSize: 30000000,
-  },
   optimization: {
     splitChunks: {
       chunks: 'all',
@@ -22,17 +19,17 @@ const prodConfig = {
           test: /[\\/]node_modules[\\/]/,
           enforce: true,
           priority: -10,
-          name: 'vendors',
+          name: 'vendors'
         },
         commons: {
           minChunks: 2,
           priority: -20,
           reuseExistingChunk: true,
-          name: 'commons',
-        },
-      },
-    },
-  },
-};
+          name: 'commons'
+        }
+      }
+    }
+  }
+}
 
-module.exports = prodConfig;
+export default prodConfig

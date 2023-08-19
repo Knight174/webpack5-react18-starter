@@ -1,21 +1,23 @@
-const { resolve } = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+import { resolve } from 'path'
+import HTMLWebpackPlugin from 'html-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import TerserPlugin from 'terser-webpack-plugin'
+import dirname from './names'
+import { WebpackOptionsNormalized, Configuration } from 'webpack'
 
-const commonConfig = {
+const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
   entry: './src/main.tsx',
   output: {
     filename: 'js/[name].[contenthash:6].js',
     assetModuleFilename: 'assets/[name]_[hash][ext]',
-    path: resolve(__dirname, '../dist'),
-    clean: true,
+    path: resolve(dirname, '../dist'),
+    clean: true
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      '@': resolve(__dirname, '../src'),
-    },
+      '@': resolve(dirname, '../src')
+    }
   },
   optimization: {
     moduleIds: 'deterministic',
@@ -23,9 +25,9 @@ const commonConfig = {
     minimize: true,
     minimizer: [
       new TerserPlugin({
-        minify: TerserPlugin.swcMinify,
-      }),
-    ],
+        minify: TerserPlugin.swcMinify
+      })
+    ]
   },
   module: {
     rules: [
@@ -37,12 +39,12 @@ const commonConfig = {
           options: {
             jsc: {
               parser: {
-                syntax: 'typescript',
-              },
+                syntax: 'typescript'
+              }
             },
-            minify: true,
-          },
-        },
+            minify: true
+          }
+        }
       },
       {
         test: /\.s?css$/,
@@ -54,44 +56,44 @@ const commonConfig = {
             options: {
               additionalData: `
                 @import "~@/style/_var.scss";
-              `,
-            },
+              `
+            }
           },
-          'postcss-loader',
-        ],
+          'postcss-loader'
+        ]
       },
       {
         test: /\.(jpe?g|png|gif|svg|bmp|tiff)$/,
         exclude: /node_modules/,
         type: 'asset',
         generator: {
-          filename: 'assets/images/[name]_[hash][ext]',
+          filename: 'assets/images/[name]_[hash][ext]'
         },
         parser: {
           dataUrlCondition: {
-            maxSize: 8 * 1024,
-          },
-        },
+            maxSize: 8 * 1024
+          }
+        }
       },
       {
         test: /\.(otf|eot|woff2?|ttf|svg)$/,
         exclude: /node_modules/,
         type: 'asset',
         generator: {
-          filename: 'assets/fonts/[name]_[hash][ext]',
-        },
-      },
-    ],
+          filename: 'assets/fonts/[name]_[hash][ext]'
+        }
+      }
+    ]
   },
   plugins: [
     new HTMLWebpackPlugin({
       template: './public/index.html',
-      title: 'Webpack5 + React18',
+      title: 'Webpack5 + React18'
     }),
     new MiniCssExtractPlugin({
-      filename: 'style/[name].[contenthash:6].css',
-    }),
-  ],
-};
+      filename: 'style/[name].[contenthash:6].css'
+    })
+  ]
+}
 
-module.exports = commonConfig;
+export default commonConfig
