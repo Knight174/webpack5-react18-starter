@@ -74,6 +74,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
+      "pnpm run lint:prettier",
       "pnpm run lint:eslint"
     ],
     "src/**/*.{js,jsx,ts,tsx,css,less,scss,stylus}": [
