@@ -12,8 +12,9 @@
   ],
   "type": "module",
   "scripts": {
-    "dev": "webpack server --mode=development --node-env=development --progress",
-    "build": "webpack --mode=production --node-env=production --progress",
+    "dev": "webpack server --mode=development --node-env=development",
+    "build": "webpack --mode=production --node-env=production",
+    "build:measure": "MEASURE=true webpack --mode=production --node-env=production",
     "analyze": "webpack-bundle-analyzer --port 8888 ./dist/stats.json"
   },
   "devDependencies": {
@@ -45,6 +46,7 @@
     "react-refresh": "^0.14.0",
     "sass": "^1.66.0",
     "sass-loader": "^13.3.2",
+    "speed-measure-webpack-plugin": "^1.5.0",
     "style-loader": "^3.3.3",
     "swc-loader": "^0.2.3",
     "terser-webpack-plugin": "^5.3.9",
