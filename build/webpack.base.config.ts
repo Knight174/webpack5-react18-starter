@@ -34,17 +34,30 @@ const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
       {
         test: /\.([jt]sx?)?$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'swc-loader',
-          options: {
-            jsc: {
-              parser: {
-                syntax: 'typescript'
-              }
-            },
-            minify: true
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                '@babel/preset-env',
+                ['@babel/preset-react', { runtime: 'automatic' }],
+                '@babel/preset-typescript'
+              ]
+            }
           }
-        }
+          // {
+          //   loader: 'swc-loader',
+          //   options: {
+          //     jsc: {
+          //       parser: {
+          //         syntax: 'typescript',
+          //         tsx: true
+          //       }
+          //     },
+          //     minify: true
+          //   }
+          // }
+        ]
       },
       {
         test: /\.s?css$/,
