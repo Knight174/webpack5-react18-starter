@@ -68,7 +68,7 @@ const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
             loader: 'sass-loader',
             options: {
               additionalData: `
-                @import "~@/style/_var.scss";
+                @import "~src/style/_var.scss";
               `
             }
           },
