@@ -12,9 +12,9 @@ export default function App() {
   return (
     <div>
       {/* Content */}
-      <main className="wrapper">
+      <main className='wrapper'>
         <div>Hello world!</div>
-        <img width={'500px'} src={img} alt="wechat" />
+        <img width={'500px'} src={img} alt='wechat' />
       </main>
     </div>
   )

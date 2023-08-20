@@ -14,7 +14,8 @@
   "scripts": {
     "dev": "webpack server --mode=development --node-env=development",
     "build": "webpack --mode=production --node-env=production",
-    "build:analyze": "MEASURE=true webpack --mode=production --node-env=production"
+    "build:analyze": "MEASURE=true webpack --mode=production --node-env=production",
+    "prettier": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,less,scss,stylus,html,md}\""
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",

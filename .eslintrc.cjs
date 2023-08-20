@@ -17,6 +17,12 @@ module.exports = {
   ],
   plugins: [],
   rules: {
-    // 'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
+    'prettier/prettier': [
+      'off',
+      {
+        singleQuote: true,
+        parser: 'flow'
+      }
+    ]
   }
 }
