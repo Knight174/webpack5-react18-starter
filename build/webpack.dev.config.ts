@@ -31,7 +31,7 @@ const devConfig: Partial<WebpackOptionsNormalized> = {
   plugins: [
     new ESLintPlugin({
       fix: true,
-      extensions: ['js', 'ts', 'tsx', 'json'],
+      extensions: ['js', 'jsx', 'ts', 'tsx'],
       exclude: '/node_modules/'
     })
   ]
