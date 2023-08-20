@@ -12,8 +12,8 @@ const isDEV = process.env.NODE_ENV === 'development'
 const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
   entry: './src/main.tsx',
   output: {
-    filename: 'js/[name].[contenthash:6].js',
-    assetModuleFilename: 'assets/[name]_[hash][ext]',
+    filename: 'js/[name].[chunkhash:6].js',
+    assetModuleFilename: 'assets/[name].[contenthash:6][ext]',
     path: resolve(dirname, '../dist'),
     clean: true
   },
@@ -29,7 +29,12 @@ const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
     minimize: true,
     minimizer: [
       new TerserPlugin({
-        minify: TerserPlugin.swcMinify
+        minify: TerserPlugin.swcMinify,
+        terserOptions: {
+          compress: {
+            pure_funcs: ['console.log']
+          }
+        }
       })
     ]
   },
@@ -85,7 +90,7 @@ const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
         exclude: /node_modules/,
         type: 'asset',
         generator: {
-          filename: 'assets/images/[name]_[hash][ext]'
+          filename: 'assets/images/[name].[contenthash:6][ext]'
         },
         parser: {
           dataUrlCondition: {
@@ -98,7 +103,7 @@ const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
         exclude: /node_modules/,
         type: 'asset',
         generator: {
-          filename: 'assets/fonts/[name]_[hash][ext]'
+          filename: 'assets/fonts/[name].[contenthash:6][ext]'
         }
       }
     ]
