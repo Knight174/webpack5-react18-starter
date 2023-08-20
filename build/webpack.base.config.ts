@@ -5,6 +5,9 @@ import TerserPlugin from 'terser-webpack-plugin'
 import dirname from './names'
 import { WebpackOptionsNormalized, Configuration } from 'webpack'
 
+// 是否为生产环境
+const isProd = process.env.NODE_ENV === 'production'
+
 const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
   entry: './src/main.tsx',
   output: {
@@ -62,7 +65,7 @@ const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
       {
         test: /\.s?css$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          isProd ? MiniCssExtractPlugin.loader : 'style-loader',
           'css-loader',
           {
             loader: 'sass-loader',
