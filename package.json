@@ -16,7 +16,7 @@
     "build": "webpack --mode=production --node-env=production",
     "build:analyze": "MEASURE=true webpack --mode=production --node-env=production",
     "lint:eslint": "eslint --fix ./src --ext .js,.ts,.tsx",
-    "lint:prettier": "prettier --write \"src/**/*.{js,ts,json,tsx,css,less,scss,stylus,html,md}\""
+    "lint:prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,less,scss,stylus}\""
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",
@@ -45,6 +45,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-webpack-plugin": "^4.0.1",
     "html-webpack-plugin": "^5.5.3",
+    "husky": "^8.0.3",
     "mini-css-extract-plugin": "^2.7.6",
     "postcss-loader": "^7.3.3",
     "prettier": "^3.0.2",
@@ -66,5 +67,13 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "pnpm run lint:eslint"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,css,less,scss,stylus}": [
+      "pnpm run lint:prettier"
+    ]
   }
 }
