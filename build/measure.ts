@@ -14,9 +14,9 @@ const handleConfigWithMiniCssExtractPlugin = (config) => {
 }
 
 const measureConfig = (config) => {
-  const configToExport = handleConfigWithMiniCssExtractPlugin(config)
-
-  return isMEASURE ? configToExport : config
+  const configToExport =
+    isMEASURE === 'true' ? handleConfigWithMiniCssExtractPlugin(config) : config
+  return configToExport
 }
 
 export { measureConfig, isMEASURE }
