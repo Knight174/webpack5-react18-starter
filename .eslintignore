@@ -5,3 +5,4 @@ env
 pnpm-lock.yaml
 README.md
 src/assets/*
+build/*
