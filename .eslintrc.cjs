@@ -16,13 +16,5 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   plugins: [],
-  rules: {
-    'prettier/prettier': [
-      'off',
-      {
-        singleQuote: true,
-        parser: 'flow'
-      }
-    ]
-  }
+  rules: {}
 }
