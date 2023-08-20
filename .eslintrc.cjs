@@ -20,27 +20,28 @@ module.exports = {
   },
   ignorePatterns: ['**/node_modules/*'],
   extends: [
-    'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
     'plugin:@typescript-eslint/recommended',
-    'prettier'
+    'plugin:prettier/recommended'
   ],
   rules: {
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off',
-    '@typescript-eslint/ban-ts-comment': 'off',
-
     'react/prop-types': 'off',
-    'react/jsx-props-no-spreading': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+
+    // '@typescript-eslint/explicit-function-return-type': 'off',
+    // '@typescript-eslint/explicit-module-boundary-types': 'off',
+    // '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    // '@typescript-eslint/no-explicit-any': 'off',
+    // '@typescript-eslint/no-non-null-assertion': 'off',
+    // '@typescript-eslint/ban-ts-comment': 'off',
+
+    // 'react/prop-types': 'off',
+    // 'react/jsx-props-no-spreading': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-uses-react': 'off',
-    'react/jsx-uses-vars': 'error',
-    'react/jsx-filename-extension': 'off',
+    // 'react/jsx-uses-react': 'off',
+    // 'react/jsx-uses-vars': 'error',
+    // 'react/jsx-filename-extension': 'off',
 
     'no-underscore-dangle': 'off',
     'no-use-before-define': 'off',

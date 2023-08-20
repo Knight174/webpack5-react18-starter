@@ -13,7 +13,7 @@ export default function App() {
     <div>
       {/* Content */}
       <main className='wrapper'>
-        <div>Hello world!</div>
+        <div>Hello world! </div>
         <img width='500px' src={img} alt='wechat' />
       </main>
     </div>
