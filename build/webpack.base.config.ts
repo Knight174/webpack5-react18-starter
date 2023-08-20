@@ -2,6 +2,7 @@ import { resolve } from 'path'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
+import WebpackBar from 'webpackbar'
 import dirname from './names'
 import { WebpackOptionsNormalized, Configuration } from 'webpack'
 
@@ -110,7 +111,12 @@ const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
     isProd &&
       new MiniCssExtractPlugin({
         filename: 'style/[name].[contenthash:6].css'
-      })
+      }),
+    new WebpackBar({
+      color: '#85d',
+      basic: false,
+      profile: false
+    })
   ].filter(Boolean)
 }
 

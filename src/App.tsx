@@ -14,7 +14,7 @@ export default function App() {
       {/* Content */}
       <main className="wrapper">
         <div>Hello world!</div>
-        <img width={'300px'} src={img} alt="wechat" />
+        <img width={'500px'} src={img} alt="wechat" />
       </main>
     </div>
   )
