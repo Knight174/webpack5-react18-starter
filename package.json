@@ -16,7 +16,8 @@
     "build": "webpack --mode=production --node-env=production",
     "build:analyze": "MEASURE=true webpack --mode=production --node-env=production",
     "lint:eslint": "eslint --fix ./src --ext .js,.ts,.tsx",
-    "lint:prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,less,scss,stylus}\""
+    "lint:prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,less,scss,stylus}\"",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",
@@ -73,9 +74,10 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "pnpm run lint:prettier",
-      "pnpm run lint:eslint",
-      "git add"
+      "eslint --fix"
+    ],
+    "src/**/*.{json,js,jsx,ts,tsx,css,scss,html}": [
+      "prettier --write --ignore-unknown"
     ]
   },
   "husky": {
@@ -86,7 +88,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "cz-conventional-changelog"
     }
   }
 }
