@@ -2,10 +2,10 @@ import { useEffect } from 'react'
 import './style/App.scss'
 import img from 'src/assets/wechat.png'
 
-export default function App() {
+export default function      App() {
   console.log('App re-render')
 
-  useEffect(() => {
+  useEffect(    () => {
     console.log('mounted App 挂载（只一次）')
   }, [])
 
