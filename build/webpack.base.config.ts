@@ -16,7 +16,7 @@ const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      '@': resolve(dirname, '../src')
+      src: resolve(dirname, '../src')
     }
   },
   optimization: {
