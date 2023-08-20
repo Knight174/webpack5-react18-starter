@@ -16,8 +16,7 @@
     "build": "webpack --mode=production --node-env=production",
     "build:analyze": "MEASURE=true webpack --mode=production --node-env=production",
     "lint:eslint": "eslint --fix ./src --ext .js,.ts,.tsx",
-    "lint:prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,less,scss,stylus}\"",
-    "prepare": "husky install"
+    "lint:prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,less,scss,stylus}\""
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",
