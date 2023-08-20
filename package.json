@@ -14,8 +14,7 @@
   "scripts": {
     "dev": "webpack server --mode=development --node-env=development",
     "build": "webpack --mode=production --node-env=production",
-    "build:measure": "MEASURE=true webpack --mode=production --node-env=production",
-    "analyze": "webpack-bundle-analyzer --port 8888 ./dist/stats.json"
+    "build:analyze": "MEASURE=true webpack --mode=production --node-env=production"
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",

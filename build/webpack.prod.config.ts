@@ -1,15 +1,8 @@
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import { WebpackOptionsNormalized, Configuration } from 'webpack'
 
 const prodConfig: Partial<WebpackOptionsNormalized> | Configuration = {
   mode: 'production',
   devtool: 'nosources-source-map',
-  plugins: [
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'disabled',
-      generateStatsFile: true
-    })
-  ],
   optimization: {
     splitChunks: {
       chunks: 'all',

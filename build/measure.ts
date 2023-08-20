@@ -19,4 +19,4 @@ const measureConfig = (config) => {
   return isMEASURE ? configToExport : config
 }
 
-export default measureConfig
+export { measureConfig, isMEASURE }
