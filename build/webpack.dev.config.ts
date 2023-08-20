@@ -1,5 +1,6 @@
 import { join } from 'path'
 import ESLintPlugin from 'eslint-webpack-plugin'
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import dirname from './names'
 import { WebpackOptionsNormalized } from 'webpack'
 
@@ -33,7 +34,8 @@ const devConfig: Partial<WebpackOptionsNormalized> = {
       fix: true,
       extensions: ['js', 'jsx', 'ts', 'tsx'],
       exclude: '/node_modules/'
-    })
+    }),
+    new ReactRefreshWebpackPlugin()
   ]
 }
 

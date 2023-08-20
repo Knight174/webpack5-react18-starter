@@ -5,8 +5,8 @@ import TerserPlugin from 'terser-webpack-plugin'
 import dirname from './names'
 import { WebpackOptionsNormalized, Configuration } from 'webpack'
 
-// 是否为生产环境
 const isProd = process.env.NODE_ENV === 'production'
+const isDEV = process.env.NODE_ENV === 'development'
 
 const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
   entry: './src/main.tsx',
@@ -45,7 +45,8 @@ const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
                 '@babel/preset-env',
                 ['@babel/preset-react', { runtime: 'automatic' }],
                 '@babel/preset-typescript'
-              ]
+              ],
+              plugins: [isDEV && require.resolve('react-refresh/babel')].filter(Boolean)
             }
           }
           // {
