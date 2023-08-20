@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
+import './style/App.scss'
 
 export default function App() {
   console.log('App re-render')
@@ -11,9 +12,9 @@ export default function App() {
   return (
     <div>
       {/* Content */}
-      <section>
+      <main className="wrapper">
         <div>Hello world!</div>
-      </section>
+      </main>
     </div>
   )
 }
