@@ -23,6 +23,8 @@
     "@babel/preset-env": "^7.22.10",
     "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.22.5",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@swc/core": "^1.3.78",
     "@swc/register": "^0.1.10",
@@ -35,7 +37,9 @@
     "@typescript-eslint/parser": "^6.4.0",
     "autoprefixer": "^10.4.15",
     "babel-loader": "^9.1.3",
+    "commitizen": "^4.3.0",
     "css-loader": "^6.8.1",
+    "cz-git": "^1.7.1",
     "eslint": "^8.47.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.0.0",
@@ -75,5 +79,10 @@
     "src/**/*.{js,jsx,ts,tsx,css,less,scss,stylus}": [
       "pnpm run lint:prettier"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   }
 }
