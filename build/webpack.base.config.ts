@@ -106,10 +106,11 @@ const commonConfig: Partial<WebpackOptionsNormalized> | Configuration = {
       template: './public/index.html',
       title: 'Webpack5 + React18'
     }),
-    new MiniCssExtractPlugin({
-      filename: 'style/[name].[contenthash:6].css'
-    })
-  ]
+    isProd &&
+      new MiniCssExtractPlugin({
+        filename: 'style/[name].[contenthash:6].css'
+      })
+  ].filter(Boolean)
 }
 
 export default commonConfig
